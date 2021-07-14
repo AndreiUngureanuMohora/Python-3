@@ -1,27 +1,18 @@
-import random
+#string concatenation (aka how to put strings together)
+# suppose we want to create a string that says "subscribe to_____"
+youtuber = "" #some string variable
 
-def guess(x):
-    random_number = random.randint(1, x)
-    guess = 0
-    while guess != random_number:
-        guess = int(input(f"Guess a number between 1 an {x}: "))
-        if guess < random_number:
-            print("Sorry, guess again.Too low.")
-        elif guess > random_number:
-            print("Sorry, guess again. Too high.")
-    print(f'Yay, congrats. You have guessed the number {random_number}')
+# a few ways to do this
+print("subscribe to " + youtuber)
+print("subscribe to {}".format(youtuber))
+print(f"subscribe to {youtuber}")
 
-def computer_guess(x):
-    low = 1
-    high = x
-    feedback = " "
-    while feedback != "c":
-        guess = random.randint(low, high)
-        feedback = input(f'Is {guess} to high (H), too low (L), or correct (C)').lower()
-        if feedback == "h":
-            high = guess -1
-        elif feedback == 'l':
-            low = guess + 1
-    print(f'Yay!! The computer guesses your number, {guess}, correctly!')
+adj = input("Adjective: ")
+verb1 = input("Verb: ")
+verb2 = input("Verb: ")
+famous_person = input("Famous person: ")
 
-guess(10)
+madlib = f"Computer programming is so {adj}! It make me so excited all the time because \
+I love to {verb1}. Stay hydrated and {verb2} like you are {famous_person}!"
+
+print(madlib)
